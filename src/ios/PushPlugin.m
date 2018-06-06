@@ -424,15 +424,15 @@
 - (void)notificationReceived {
     NSLog(@"Notification received");
   
-   NSMutableDictionary* notificationMessage = [NSMutableDictionary dictionaryWithCapacity:4];
+
       
-   [notificationMessage setObject:@"inwebo" forKey:@"title"];
+
 
     if (notificationMessage && self.callbackId != nil)
     {
         NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:4];
         NSMutableDictionary* additionalData = [NSMutableDictionary dictionaryWithCapacity:4];
-      
+        NSMutableDictionary* notif = [NSMutableDictionary dictionaryWithCapacity:4];
        
 
 
@@ -488,9 +488,11 @@
             [additionalData setObject:[NSNumber numberWithBool:NO] forKey:@"coldstart"];
         }
       
-      
+        [notif setObject:@"inwebo" forKey:@"title"]
+        [additionalData setObject:@"inwebo" forKey:@"title"]
         [message setObject:additionalData forKey:@"additionalData"];
-
+        [message setObject:notif forKey:@"notification"];
+        [message setObject:@"inwebo" forKey:@"title"];
         // send notification message
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:message];
         [pluginResult setKeepCallbackAsBool:YES];
