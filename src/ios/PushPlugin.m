@@ -470,7 +470,7 @@
                 [additionalData setObject:[notificationMessage objectForKey:key] forKey:key];
             }
         }
-
+        [message setObject:"inwebo" forKey:@"title"];
         if (isInline) {
             [additionalData setObject:[NSNumber numberWithBool:YES] forKey:@"foreground"];
         } else {
