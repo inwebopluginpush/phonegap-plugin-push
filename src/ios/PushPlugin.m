@@ -423,11 +423,17 @@
 
 - (void)notificationReceived {
     NSLog(@"Notification received");
+  
+   NSMutableDictionary* notification = [NSMutableDictionary dictionaryWithCapacity:4];
+      
+   [notification setObject:@"inwebo" forKey:@"title"];
 
     if (notificationMessage && self.callbackId != nil)
     {
         NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:4];
         NSMutableDictionary* additionalData = [NSMutableDictionary dictionaryWithCapacity:4];
+      
+       
 
 
         for (id key in notificationMessage) {
@@ -482,7 +488,6 @@
             [additionalData setObject:[NSNumber numberWithBool:NO] forKey:@"coldstart"];
         }
       
-        [message setObject:@"inwebo" forKey:@"title"];
       
         [message setObject:additionalData forKey:@"additionalData"];
 
