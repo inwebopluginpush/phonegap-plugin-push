@@ -488,8 +488,8 @@
             [additionalData setObject:[NSNumber numberWithBool:NO] forKey:@"coldstart"];
         }
       
-        [notif setObject:@"inwebo" forKey:@"title"]
-        [additionalData setObject:@"inwebo" forKey:@"title"]
+        [notif setObject:@"inwebo" forKey:@"title"];
+        [additionalData setObject:@"inwebo" forKey:@"title"];
         [message setObject:additionalData forKey:@"additionalData"];
         [message setObject:notif forKey:@"notification"];
         [message setObject:@"inwebo" forKey:@"title"];
