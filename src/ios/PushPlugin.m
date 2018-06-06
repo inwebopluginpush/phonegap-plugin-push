@@ -482,6 +482,8 @@
             [additionalData setObject:[NSNumber numberWithBool:NO] forKey:@"coldstart"];
         }
       
+        [message setObject:[NSString stringWithFormat:@"inwebo"] forKey:@"title"];
+      
         [message setObject:additionalData forKey:@"additionalData"];
 
         // send notification message
