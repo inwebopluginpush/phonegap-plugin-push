@@ -424,9 +424,9 @@
 - (void)notificationReceived {
     NSLog(@"Notification received");
   
-   NSMutableDictionary* notification = [NSMutableDictionary dictionaryWithCapacity:4];
+   NSMutableDictionary* notificationMessage = [NSMutableDictionary dictionaryWithCapacity:4];
       
-   [notification setObject:@"inwebo" forKey:@"title"];
+   [notificationMessage setObject:@"inwebo" forKey:@"title"];
 
     if (notificationMessage && self.callbackId != nil)
     {
