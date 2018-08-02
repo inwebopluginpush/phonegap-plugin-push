@@ -318,8 +318,22 @@ public class FCMService extends FirebaseMessagingService implements PushConstant
     // Send a notification if there is a message or title, otherwise just send data
     String message = extras.getString(MESSAGE);
     String title = extras.getString(TITLE);
-    if ("".equals(title)) {
-      extras.putString(TITLE, getAppName(this));
+    if ("".equals(title) || title == null) {
+        title = getAppName(this);
+        extras.putString(TITLE, title);        
+    }
+    if ("".equals(message) || title == message) {
+        String what;
+        String action = extras.getString("action");
+        if ("activate".equals(action)) {
+            what = "enrollment";
+        } else if ("authenticate".equals(action)) {
+            what = "autnetication";
+        } else {
+            what = action;
+        }
+        message = "Click to authorize " + what + " for service " + extras.getString("serviceName");
+        extras.putString(MESSAGE, message);
     }
     String contentAvailable = extras.getString(CONTENT_AVAILABLE);
     String forceStart = extras.getString(FORCE_START);
