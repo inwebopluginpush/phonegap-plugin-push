@@ -328,7 +328,7 @@ public class FCMService extends FirebaseMessagingService implements PushConstant
         if ("activate".equals(action)) {
             what = "enrollment";
         } else if ("authenticate".equals(action)) {
-            what = "authentication";
+            what = "autnetication";
         } else {
             what = action;
         }
